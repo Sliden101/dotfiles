@@ -1,1 +1,30 @@
-/etc/nixos/modules/ssh.nix
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  environment.systemPackages = with pkgs; [
+    gcr
+  ];
+
+  programs.ssh.startAgent = false;
+
+  programs.ssh.extraConfig = ''
+    Host *
+      AddKeysToAgent yes
+  '';
+
+  services.gnome.gcr-ssh-agent.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.ly.enableGnomeKeyring = true;
+
+  home-manager.users.sliden.home.sessionVariables = {
+    SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/gcr/ssh";
+  };
+}

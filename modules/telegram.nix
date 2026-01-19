@@ -1,1 +1,15 @@
-/etc/nixos/modules/telegram.nix
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  home-manager.users.sliden.home.packages = with pkgs; [
+    telegram-desktop
+  ];
+}
+
+
+

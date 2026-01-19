@@ -1,1 +1,5 @@
-/etc/nixos/modules/x11/xinitrc.sh
+#!/bin/sh
+
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
+exec stumpwm

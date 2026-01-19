@@ -1,1 +1,14 @@
-/etc/nixos/modules/docker.nix
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  virtualisation.docker = {
+    enable = true;
+  };
+
+  users.users.sliden.extraGroups = [ "docker" ];
+}
