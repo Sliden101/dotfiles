@@ -26,7 +26,7 @@
     tt
     usbutils # lsusb
     yt-dlp
-    
+
     ffmpeg-full
     # archives
     zip
@@ -35,9 +35,8 @@
     peazip
     unrar-free
     rar
-	
+
     aria2
     flameshot
   ];
 }
-
