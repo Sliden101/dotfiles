@@ -1,14 +1,1 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-
-{
-  virtualisation.docker = {
-    enable = true;
-  };
-
-  users.users.sliden.extraGroups = [ "docker" ];
-}
+/etc/nixos/modules/docker.nix

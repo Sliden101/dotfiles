@@ -1,9 +1,1 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-{
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
-}
+/etc/nixos/modules/mullvad.nix

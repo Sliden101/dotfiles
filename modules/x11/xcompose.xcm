@@ -1,12 +1,1 @@
-# dashes
-<Multi_key> <minus> <minus> <space> : "–" # en dash
-<Multi_key> <minus> <minus> <minus> : "—" # em dash
-
-# quotes
-<Multi_key> <grave>      <space>      : "‘" # left single quote
-<Multi_key> <apostrophe> <space>      : "’" # right single quote
-<Multi_key> <grave>      <grave>      : "“" # left double quote
-<Multi_key> <apostrophe> <apostrophe> : "”" # right double quote
-
-# other typography
-<Multi_key> <period> <period> <period> : "…" # ellipsis
+/etc/nixos/modules/x11/xcompose.xcm
