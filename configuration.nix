@@ -1,14 +1,14 @@
-# Edit this configuration file to define what should be installed on your system.  Help is available 
+# Edit this configuration file to define what should be installed on your system.  Help is available
 # in the configuration.nix(5) man page and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-	./hardware-configuration.nix
-#	./home.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    #	./home.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +17,8 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."luks-43e8a04f-68af-4a55-bf28-1873d4a89773".device = "/dev/disk/by-uuid/43e8a04f-68af-4a55-bf28-1873d4a89773";
+  boot.initrd.luks.devices."luks-43e8a04f-68af-4a55-bf28-1873d4a89773".device =
+    "/dev/disk/by-uuid/43e8a04f-68af-4a55-bf28-1873d4a89773";
   networking.hostName = "lapis"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -93,13 +94,16 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
- nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
- environment.systemPackages = with pkgs; [
-	vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  	wget
-	curl
-	git
- ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    git
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

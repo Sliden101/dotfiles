@@ -53,5 +53,5 @@
     #Reverse Engineering
     ghidra-bin
 
-];
+  ];
 }

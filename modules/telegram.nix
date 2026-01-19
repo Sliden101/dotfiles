@@ -10,6 +10,3 @@
     telegram-desktop
   ];
 }
-
-
-
